@@ -1,0 +1,235 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background:
+        radial-gradient(circle at top left, #1e3a8a 0%, #0f172a 35%),
+        #0f172a;
+    color: #e2e8f0;
+    min-height: 100vh;
+    padding: 30px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    color: #f8fafc;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #94a3b8;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.card {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+}
+
+.card h3 {
+    color: #94a3b8;
+    margin-bottom: 10px;
+    font-size: 1rem;
+}
+
+.card p {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.ingresos {
+    border-left: 6px solid #22c55e;
+}
+
+.gastos {
+    border-left: 6px solid #ef4444;
+}
+
+.saldo {
+    border-left: 6px solid #3b82f6;
+}
+
+.form-section,
+.tabla-section {
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, .25);
+}
+
+.form-section h2,
+.tabla-section h2 {
+    margin-bottom: 20px;
+    color: #f8fafc;
+}
+
+form {
+    display: grid;
+    gap: 15px;
+}
+
+input,
+select {
+    background: #334155;
+    color: white;
+    border: 1px solid #475569;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 1rem;
+}
+
+input::placeholder {
+    color: #94a3b8;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, .2);
+}
+
+button {
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #2563eb;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #334155;
+}
+
+th {
+    text-align: left;
+    padding: 15px;
+    color: #f8fafc;
+}
+
+td {
+    padding: 15px;
+    border-bottom: 1px solid #334155;
+}
+
+tr:hover {
+    background: rgba(255, 255, 255, 0.03);
+}
+
+.delete-btn {
+    background: #dc2626;
+    padding: 8px 14px;
+    border-radius: 8px;
+}
+
+.delete-btn:hover {
+    background: #b91c1c;
+}
+
+.ingreso-texto {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.gasto-texto {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    table {
+        display: block;
+        overflow-x: auto;
+    }
+
+    .card p {
+        font-size: 1.5rem;
+    }
+}
+
+.resumen-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.toggle-btn {
+    width: auto;
+    padding: 8px 16px;
+}
+
+.oculto {
+    display: none;
+}
+
+#cantidadMovimientos,
+#promedioGasto {
+    margin-top: 10px;
+}

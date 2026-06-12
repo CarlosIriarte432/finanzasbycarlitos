@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finanzas Personales</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>💰 Finanzas Personales by Carlitos</h1>
+        </header>
+<div class="auth-container">
+
+    <button id="loginBtn">
+        Iniciar sesión con Google
+    </button>
+
+    <button id="logoutBtn">
+        Cerrar sesión
+    </button>
+
+    <p id="usuarioActual">
+        No autenticado
+    </p>
+
+</div>
+        <section class="dashboard">
+
+            <div class="card ingresos">
+                <h3>Ingresos</h3>
+                <p id="totalIngresos">$0</p>
+            </div>
+
+            <div class="card gastos">
+                <h3>Gastos</h3>
+                <p id="totalGastos">$0</p>
+            </div>
+
+            <div class="card saldo">
+                <h3>Saldo</h3>
+                <p id="saldo">$0</p>
+            </div>
+
+        </section>
+
+<section class="form-section">
+
+    <div class="resumen-header">
+
+        <h2>📊 Resumen del período</h2>
+
+        <button
+            id="toggleResumen"
+            class="toggle-btn">
+
+            Ocultar
+
+        </button>
+
+    </div>
+
+    <div id="resumenContenido">
+
+        <p id="cantidadMovimientos">
+            Movimientos: 0
+        </p>
+
+        <p id="promedioGasto">
+            Gasto promedio: $0
+        </p>
+
+    </div>
+
+</section>
+
+     <section class="form-section">
+
+    <h2>Agregar Movimiento</h2>
+
+    <form id="movimientoForm">
+
+        <input
+            type="text"
+            id="descripcion"
+            placeholder="Descripción"
+            required>
+
+        <input
+            type="number"
+            id="monto"
+            placeholder="Monto"
+            required>
+
+        <select id="tipo">
+            <option value="ingreso">Ingreso</option>
+            <option value="gasto">Gasto</option>
+        </select>
+
+        <button type="submit">
+            Agregar Movimiento
+        </button>
+
+    </form>
+
+</section>
+
+        <section class="tabla-section">
+
+            <h2>Movimientos</h2>
+
+            <select id="filtroMes">
+                <option value="todos">
+                    Todos los meses
+                </option>
+            </select>
+
+            <br><br>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>Descripción</th>
+                        <th>Tipo</th>
+                        <th>Fecha</th>
+                        <th>Monto</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaMovimientos">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <script type="module" src="auth.js"></script>
+    <script type="module" src="app.js"></script>
+</body>
+
+</html>

@@ -7,132 +7,122 @@
     <title>Finanzas Personales</title>
 
     <link rel="stylesheet" href="styles.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 
 <body>
-<header class="topbar">
+    <header class="topbar">
 
-    <h1>
-        💰 Finanzas Personales by Carlitos
-    </h1>
+        <h1>
+            💵 Finanzas Personales by Carlitos
+        </h1>
 
-    <div class="auth-container">
+        <div class="auth-container">
 
-        <div class="auth-card">
+            <div class="auth-card">
 
-            <div class="auth-buttons">
+                <div class="auth-buttons">
 
-                <button id="loginBtn" class="login-btn">
-                    🔑 Iniciar sesión
-                </button>
+                    <button id="loginBtn" class="login-btn">
+                        🔑 Iniciar sesión
+                    </button>
 
-                <button id="logoutBtn" class="logout-btn">
-                    🚪 Cerrar sesión
-                </button>
+                    <button id="logoutBtn" class="logout-btn">
+                        Cerrar sesión
+                    </button>
+
+                </div>
+
+                <p id="usuarioActual">
+                    No autenticado
+                </p>
 
             </div>
-
-            <p id="usuarioActual">
-                No autenticado
-            </p>
 
         </div>
 
-    </div>
+    </header>
+    <section class="dashboard">
 
-</header>
-        <section class="dashboard">
+        <div class="card ingresos">
+            <h3>Ingresos</h3>
+            <p id="totalIngresos">$0</p>
+        </div>
 
-            <div class="card ingresos">
-                <h3>Ingresos</h3>
-                <p id="totalIngresos">$0</p>
+        <div class="card gastos">
+            <h3>Gastos</h3>
+            <p id="totalGastos">$0</p>
+        </div>
+
+        <div class="card saldo">
+            <h3>Saldo</h3>
+            <p id="saldo">$0</p>
+        </div>
+
+    </section>
+
+    <div class="container">
+
+        <section class="form-section">
+
+            <div class="resumen-header">
+
+                <h2>📊 Balance Mensual</h2>
+
+                <button id="toggleResumen" class="toggle-btn">Ocultar</button>
+
             </div>
 
-            <div class="card gastos">
-                <h3>Gastos</h3>
-                <p id="totalGastos">$0</p>
-            </div>
+            <div id="resumenContenido" class="resumen-body transition">
 
-            <div class="card saldo">
-                <h3>Saldo</h3>
-                <p id="saldo">$0</p>
+                <div style="position: relative; height: 320px; width: 100%;">
+                    <canvas id="graficoBalance"></canvas>
+                </div>
+
             </div>
 
         </section>
 
-<section class="form-section">
+        <section class="form-section">
 
-    <div class="resumen-header">
+            <h2>Agregar Movimiento</h2>
 
-        <h2>📊 Resumen del período</h2>
+            <form id="movimientoForm">
 
-        <button
-            id="toggleResumen"
-            class="toggle-btn">
+                <input type="text" id="descripcion" placeholder="Descripción" required>
 
-            Ocultar
+                <input type="number" id="monto" placeholder="Monto" required>
 
-        </button>
+                <select id="tipo">
+                    <option value="ingreso">Ingreso</option>
+                    <option value="gasto">Gasto</option>
+                </select>
 
-    </div>
+                <button type="submit">
+                    Agregar Movimiento
+                </button>
 
-    <div id="resumenContenido">
+            </form>
 
-        <p id="cantidadMovimientos">
-            Movimientos: 0
-        </p>
-
-        <p id="promedioGasto">
-            Gasto promedio: $0
-        </p>
-
-    </div>
-
-</section>
-
-     <section class="form-section">
-
-    <h2>Agregar Movimiento</h2>
-
-    <form id="movimientoForm">
-
-        <input
-            type="text"
-            id="descripcion"
-            placeholder="Descripción"
-            required>
-
-        <input
-            type="number"
-            id="monto"
-            placeholder="Monto"
-            required>
-
-        <select id="tipo">
-            <option value="ingreso">Ingreso</option>
-            <option value="gasto">Gasto</option>
-        </select>
-
-        <button type="submit">
-            Agregar Movimiento
-        </button>
-
-    </form>
-
-</section>
+        </section>
 
         <section class="tabla-section">
 
             <h2>Movimientos</h2>
 
-            <select id="filtroMes">
-                <option value="todos">
-                    Todos los meses
-                </option>
-            </select>
+            <div class="filtros-container">
 
-            <br><br>
+                <select id="filtroMes">
+                    <option value="todos">
+                        Todos los meses
+                    </option>
+                </select>
+
+                <input type="text" id="busqueda" placeholder="🔍 Buscar movimiento...">
+
+            </div>
 
             <table>
 

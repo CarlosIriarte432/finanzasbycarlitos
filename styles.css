@@ -389,3 +389,28 @@ tr:hover {
         flex-direction: column;
     }
 }
+
+.filtros-container {
+
+    display: flex;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+    align-items: center;
+}
+
+#busqueda {
+
+    flex: 1;
+
+    margin-bottom: 0;
+}
+
+#filtroMes {
+
+    width: 220px;
+
+    min-width: 220px;
+}

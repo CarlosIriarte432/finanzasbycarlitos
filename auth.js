@@ -55,12 +55,12 @@ onAuthStateChanged(
         if(user){
 
             usuarioActual.textContent =
-                user.email;
+                 `👤 ${user.email}`;
 
         }else{
 
             usuarioActual.textContent =
-                "No autenticado";
+                "❌ No autenticado";
         }
     }
 );
